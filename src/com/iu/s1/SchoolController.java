@@ -15,10 +15,15 @@ public class SchoolController {
 	// 5번 누를때까지 돌아가 
 	
 	Scanner sc = new Scanner (System.in);
-	boolean check=false;
-
+	boolean check=true;
+	
+	StudentService ss= new StudentService ();
+	Student [] students = null;
+	
+	StudentView sv = new StudentView();
+	
 	public void start () {
-		if(check ==false) {
+		while(check) {
 		System.out.println("1. 학생     등록");
 		System.out.println("2. 성적     입력 ");
 		System.out.println("3. 성적     조회");
@@ -30,18 +35,22 @@ public class SchoolController {
 		switch (n) {
 		case 1: 
 			System.out.println("학생 등록");
-			break;	
+			students=ss.addStudent();
+			break;
 		case 2:
 			System.out.println("성적 입력");
 			break;	
-			
-		case 3 :
+		case 3:
+			System.out.println("성적 조회");
+			break;			
+		case 4 :
 			System.out.println("전체 조회");
+			sv.view(students);
 			break;	
 		
-		case 4:
+		default:
 			System.out.println("프로그램 종료");
-			check = !false;
+			check =false;
 			break;	
 			
 		}
