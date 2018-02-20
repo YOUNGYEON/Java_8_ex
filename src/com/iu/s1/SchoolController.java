@@ -39,6 +39,7 @@ public class SchoolController {
 			break;
 		case 2:
 			System.out.println("성적 입력");
+			ss.addPoint(students);			
 			break;	
 		case 3:
 			System.out.println("성적 조회");
@@ -47,7 +48,6 @@ public class SchoolController {
 			System.out.println("전체 조회");
 			sv.view(students);
 			break;	
-		
 		default:
 			System.out.println("프로그램 종료");
 			check =false;

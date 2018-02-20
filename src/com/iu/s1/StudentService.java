@@ -14,10 +14,10 @@ public class StudentService {
 	Scanner sc = new Scanner (System.in);
 
 	public Student [] addStudent() {
-		Scanner sc = new Scanner (System.in);
+
 		System.out.println("학생수를 입력하세요");
 		int n = sc.nextInt();
-		
+
 		Student [] students = new Student [n];
 
 		for (int i=0 ; i<students.length;i++) {
@@ -28,11 +28,45 @@ public class StudentService {
 			student.num = sc.nextInt();
 			students[i]=student;
 		}
-		
+
 		return students;
-		
+
+
+	}
+
+	//메서드명은 addPoint 
+	// 내용 : 각 학생의 점수 입력  
+
+	public void addPoint(Student [] students) {
+	
+		Scanner sc= new Scanner (System.in);
+
+		for (int i=0; i<students.length; i++) {
+
+			System.out.println(students[i].name+"국어 점수를 입력하세요");
+			students[i].kor = sc.nextInt();
+
+			System.out.println(students[i].name+"영어 점수를 입력하세요");
+			students[i].eng = sc.nextInt();
+
+			System.out.println(students[i].name+"수학 점수를 입력하세요");
+			students[i].math = sc.nextInt();
 			
+			students[i].total= students[i].kor+students[i].eng+students[i].math;
+			students[i].avg = students[i].total/3.0;
+
+		}
+	
 
 	}
 
 }
+
+
+
+
+
+
+
+
+
