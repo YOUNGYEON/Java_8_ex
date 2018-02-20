@@ -6,6 +6,7 @@ public class Main {
 		
 		SchoolController sc= new SchoolController();
 		sc.start();
+		System.out.println("program start");
 
 	}
 
